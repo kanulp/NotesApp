@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/NotesListFragment">
+
+    <fragment
+        android:id="@+id/NotesListFragment"
+        android:name="com.kanulp.notesapp.noteslist.NotesFragment"
+        android:label="Notes List Fragment"
+        tools:layout="@layout/fragment_notes">
+
+
+        <action
+            android:id="@+id/action_NotesListFragment_to_EditNoteFragment"
+            app:destination="@id/EditNoteFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/EditNoteFragment"
+        android:name="com.kanulp.notesapp.notes_edit.EditNoteFragment"
+        android:label="Edit Notes Fragment"
+        tools:layout="@layout/fragment_edit_note">
+
+
+        <action
+            android:id="@+id/action_EditNoteFragment_to_NotesListFragment"
+            app:destination="@id/NotesListFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.kanulp.notesapp.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>
