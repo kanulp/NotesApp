@@ -44,13 +44,16 @@ class NotesFragment : Fragment(){
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity()).get(NotesListViewModel::class.java)
+        viewModel?.getDataFromPreference()
         setupListUpdate()
+
     }
 
 
 
 
     private fun setupListUpdate() {
+
         viewModel?.noteLiveData?.observe(viewLifecycleOwner, object : Observer<List<NotesModel>> {
             override fun onChanged(t: List<NotesModel>?) {
                 if (t != null) {

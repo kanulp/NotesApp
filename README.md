@@ -1,16 +1,20 @@
-# Android Note App
+# Android Notes App
 
-
-####This project includes following features 
+#### This project includes following features
 
 * List of Notes
 * Add new note
 * Update note
+* Save All data in json Sharedpreference
+* Gson to parse data to and from data/model class
 
-###Android libraries
+### Android libraries
+
 * Live Data 
 * ViewModel
 * Navigation Component
+* Gson
+
 
 <table>
 
